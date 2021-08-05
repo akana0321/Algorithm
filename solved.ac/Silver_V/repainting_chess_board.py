@@ -1,5 +1,5 @@
 """
-    체스판 다시 칠하기
+    체스판 다시 칠하기(https://www.acmicpc.net/problem/1018)
      - 입력 : N M(1 <= N, M <= 50)
              보드의 각 행의 상태가 주어지는데, B는 검정, W는 하양
      - 출력 : 다시 칠해야 하는 정사각형 개수의 최솟값
@@ -21,6 +21,7 @@ WBWBWBWB
 BWBWBWBW
 WBWBWBWB
 이거 넣었을 때 첫번째만 바꿔서 1이 나와야 하는데 63이 나옴..
+    20210804 - https://nerogarret.tistory.com/35
 """
 from sys import stdin
 
@@ -34,53 +35,59 @@ for i in range(n):
     for j in range(m):
         board[i][j] = row[j]
 
-initial = board[0][0]
-
 # 흰색으로 시작하는 체스판을 만드는 경우
-for i in range(n):
+for index, row in enumerate(board):
     painting = []
-    if i % 2 == 0:
-        current_color = 'W'
+    if index % 2 == 0:
+        current_color = "W"
     else:
-        current_color = 'B'
+        current_color = "B"
 
-    for j in range(m):
-        if board[i][j] == current_color:
+    for value in row:
+        if value == current_color:
             painting.append(0)
         else:
             painting.append(1)
 
-        if current_color == 'W':
-            current_color = 'B'
+        if current_color == "W":
+            current_color = "B"
         else:
-            current_color = 'W'
+            current_color = "W"
     white_first.append(painting)
 
 # 검은색으로 시작하는 체스판을 만들 경우
-for i in range(n):
+for index, row in enumerate(board):
     painting = []
-    if i % 2 == 0:
-        current_color = 'B'
+    if index % 2 == 0:
+        current_color = "B"
     else:
-        current_color = 'W'
+        current_color = "W"
 
-    for j in range(m):
-        if board[i][j] == 'W':
+    for value in row:
+        if value == current_color:
             painting.append(0)
         else:
             painting.append(1)
 
-        if current_color == 'W':
-            current_color = 'B'
+        if current_color == "W":
+            current_color = "B"
         else:
-            current_color = 'W'
-
+            current_color = "W"
     black_first.append(painting)
 
 # 최솟값을 초기화할 때 보드의 최대 크기인 50*50으로 설정
 min_count = 50 * 50
 for i in range(n - 8 + 1):
     rows = white_first[i:i + 8]
+    for j in range(m - 8 + 1):
+        paint = 0
+        for row in rows:
+            paint += sum(row[j:j + 8])
+        if paint < min_count:
+            min_count = paint
+
+for i in range(n - 8 + 1):
+    rows = black_first[i:i + 8]
     for j in range(m - 8 + 1):
         paint = 0
         for row in rows:
