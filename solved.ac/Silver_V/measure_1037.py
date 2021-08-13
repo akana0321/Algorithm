@@ -7,6 +7,7 @@
      - 출력 : N을 출력
 
      * 20210805 - 최소 공배수 구현만 하면 풀이 끝
+     * 20210806 -> 모든 약수를 주니까 정렬을 하고 처음이랑 마지막 거만 곱하면 됨.....
 """
 from sys import stdin
 input = stdin.readline
@@ -14,15 +15,5 @@ input = stdin.readline
 count = int(input().strip())
 nums = list(map(int, input().split()))
 nums.sort()
-n = 1
 
-if len(nums) == 1:
-    n = nums[0] ** nums[0]
-else: # 이 부분에 최소공배수가 들어가야 함
-    for num in nums:
-        n *= num
-
-if n == nums[len(nums) - 1]:
-    n *= nums[0]
-
-print(n)
+print(nums[0] * nums[-1])
