@@ -1,10 +1,10 @@
-import easy.palindromenumber.Solution;
+import easy.romantointeger.Solution;
 
 public class application {
     public static void main(String[] args) {
         Solution solution = new Solution();
 
-        boolean result = solution.isPalindrome(124908);
+        int result = solution.romanToInt("MCMXCIV");
 
         System.out.println(result);
     }

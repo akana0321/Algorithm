@@ -12,3 +12,7 @@
   * Java
     * baekjoon
     * Dovelet
+
+## NOW
+### java
+  * leetcode
