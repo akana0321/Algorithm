@@ -1,0 +1,22 @@
+package dovelet.step3;
+
+import java.io.*;
+
+public class Hangover {
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		double c = Double.parseDouble(br.readLine());
+		int card = 1;
+		double accumulate = 0.00;
+		
+		while(true) {
+			card++;
+			accumulate += (double)Math.round((double)1/(card+1)*100)/100;
+			System.out.println("더하는거: " + (double)Math.round((double)1/(card+1)*100)/100);
+			if(accumulate >= c) {
+				System.out.println(card + " card(s)");
+				break;
+			}
+		}
+	}
+}

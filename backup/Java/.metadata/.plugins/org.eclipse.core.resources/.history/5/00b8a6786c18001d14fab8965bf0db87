@@ -1,0 +1,24 @@
+package dovelet.step3;
+// 6174
+
+import java.io.*;
+import java.util.*;
+
+public class SixtyOneSeventyFour {
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		PriorityQueue<Integer> minNum = new PriorityQueue<>();
+		PriorityQueue<Integer> maxNum = new PriorityQueue<>(Collections.reverseOrder());
+		
+		String originInput = br.readLine();
+		for(int i=0; i<originInput.length(); i++) {
+			int ele = (int)originInput.charAt(i);
+			maxNum.add(ele);
+			minNum.add(ele);
+		}
+		
+		System.out.println(maxNum.toString());
+		System.out.println(minNum.toString());
+	}
+}

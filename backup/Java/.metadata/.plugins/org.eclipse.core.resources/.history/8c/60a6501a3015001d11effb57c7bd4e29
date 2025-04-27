@@ -1,0 +1,33 @@
+package dovelet.step2;
+
+import java.io.*;
+import java.util.*;
+
+public class Cross {
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+		String input = "";
+		int[] line1 = new int[2];
+		int[] line2 = new int[2];
+		
+		for(int i=0; i<2; i++) {
+			input += br.readLine();
+		}
+		
+		System.out.println(input);
+		
+		/*
+		 * line1[0] = Integer.parseInt(st.nextToken()); line1[1] =
+		 * Integer.parseInt(st.nextToken()); line2[0] =
+		 * Integer.parseInt(st.nextToken()); line2[1] =
+		 * Integer.parseInt(st.nextToken());
+		 * 
+		 * Arrays.sort(line1); Arrays.sort(line2);
+		 * 
+		 * if((line1[0] > line2[0] && line1[1] > line2[1]) || (line1[0] < line2[0] &&
+		 * line1[1] < line2[1])) { System.out.println("cross"); } else {
+		 * System.out.println("not cross"); }
+		 */
+	}
+}
