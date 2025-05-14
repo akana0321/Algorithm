@@ -6,21 +6,29 @@ package easy.searchinsertposition;
  */
 public class Solution {
 	public int searchInsert(int[] nums, int target) {
-		// 시작점을 임시로 전달받은 배열의 가운데로 잡는다.
-		int startIndex = (nums.length - 1) / 2;
-		// 만약 가운데 지점의 값이 목표값보다 크다면 처음부터 시작하게 한다.
-		if (target < nums[startIndex]) {
-			startIndex = 0;
-		}
+		// 왼쪽
+		int left = 0;
+		// 오른쪽
+		int right = nums.length - 1;
 
-		for (int i = startIndex; i < nums.length; i++) {
-			// 목표값이 배열의 i번째 값보다 작거나 같은 경우 i를 반환한다.
-			if (target <= nums[i]) {
-				return i;
+		// 왼쪽이 오른쪽과 크거나 같아질 때까지 반복한다.
+		while (left <= right) {
+			// 중간 지점을 구한다.
+			int mid = left + (right - left) / 2;
+
+			if (nums[mid] == target) {
+				// 중간값이 목표값과 같을 경우 중간 지점을 반환한다.
+				return mid;
+			} else if (nums[mid] > target) {
+				// 중간값이 목표값보다 클 경우 오른쪽을 한 칸 뒤로 옮긴다.
+				right = mid - 1;
+			} else {
+				// 중간값이 목표값보다 작을경우 왼쪽을 한 칸 앞으로 옮긴다.
+				left = mid + 1;
 			}
 		}
 
-		// 위의 반복문을 통과했을 경우 가장 뒤에 목표값을 추가하게 한다.
-		return nums.length;
+		// 왼쪽을 반환한다.
+		return left;
 	}
 }
