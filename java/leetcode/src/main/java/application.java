@@ -1,5 +1,5 @@
-import easy.mergetwosortedLists.Solution;
-import easy.mergetwosortedLists.ListNode;
+import easy.mergetwosortedlists.Solution;
+import easy.mergetwosortedlists.ListNode;
 
 public class application {
     public static void main(String[] args) {

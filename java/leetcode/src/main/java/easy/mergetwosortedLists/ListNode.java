@@ -1,4 +1,4 @@
-package easy.mergetwosortedLists;
+package easy.mergetwosortedlists;
 
 public class ListNode {
     public int val;

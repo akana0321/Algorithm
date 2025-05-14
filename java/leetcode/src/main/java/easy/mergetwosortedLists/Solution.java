@@ -1,4 +1,4 @@
-package easy.mergetwosortedLists;
+package easy.mergetwosortedlists;
 
 /**
  * Merge Two Sorted Lists
