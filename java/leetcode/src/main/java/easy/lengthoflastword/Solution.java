@@ -11,10 +11,21 @@ public class Solution {
 			return 0;
 		}
 
-		// 전달받은 문자열의 앞, 뒤 공백을 제거한 후 공백으로 split한다.
-		String[] splittedStrings = s.trim().split(" ");
+		// 전달받은 문자열의 마지막 단어의 끝
+		int endOfLastWord = s.length() - 1;
+		// 문자열의 마지막부터 공백인 경우 하나씩 줄여나간다.(공백이 아닐 때까지 반복)
+		while (endOfLastWord >=0 && s.charAt(endOfLastWord) == ' ') {
+			endOfLastWord--;
+		}
 
-		// split한 문자열의 마지막 번째의 길이를 반환한다.
-		return splittedStrings[splittedStrings.length - 1].length();
+		// 시작지점을 마지막 단어의 끝으로 한다.
+		int startOfLastWord = endOfLastWord;
+		// 마지막 지점부터 공백이 아닌 경우 하나씩 줄여나간다(공백을 만날 때까지 반복)
+		while (startOfLastWord >= 0 && s.charAt(startOfLastWord) != ' ') {
+			startOfLastWord--;
+		}
+
+		// 마지막 지점 - 시작 지점 = 단어의 길이
+		return endOfLastWord - startOfLastWord;
 	}
 }
