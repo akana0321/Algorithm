@@ -4,6 +4,10 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
 
+/**
+ * 수 찾기
+ * https://www.acmicpc.net/problem/1920
+ */
 public class P1920 {
     public static void run() throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
