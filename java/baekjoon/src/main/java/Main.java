@@ -1,7 +1,7 @@
-import silver.P2164;
+import silver.P11866;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        P2164.run();
+        P11866.run();
     }
 }
