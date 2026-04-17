@@ -1,8 +1,8 @@
-import silver.P2512;
-//import gold.P1931;
+//import silver.P2512;
+import gold.P2110;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        P2512.run();
+        P2110.run();
     }
 }
